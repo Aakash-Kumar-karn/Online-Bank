@@ -18,6 +18,11 @@ public class UserController {
 
     private final UserService userService;
 
+    @GetMapping("/test")
+    public ResponseEntity<String> testCard() {
+
+        return ResponseEntity.ok(" User Microservice is working!");
+    }
     @GetMapping("/check/{userId}")
     public ResponseEntity<Boolean> checkUserExists(@PathVariable Long userId) {
         boolean exists = userService.existsById(userId);

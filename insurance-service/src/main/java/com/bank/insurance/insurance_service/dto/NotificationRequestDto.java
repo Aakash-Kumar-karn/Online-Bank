@@ -1,0 +1,17 @@
+package com.bank.insurance.insurance_service.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class NotificationRequestDto {
+
+    private Long userId;
+    private String title;
+    private String msg;
+    private String type; // email ya sms
+
+}

@@ -49,15 +49,6 @@ public class GlobalExceptionHandler {
         return buildResponse(HttpStatus.BAD_REQUEST, ex.getMessage(), req.getRequestURI());
     }
 
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<ApiErrorResponse> handleValidation(MethodArgumentNotValidException ex, HttpServletRequest req) {
-        StringBuilder sb = new StringBuilder("Validation failed: ");
-        for (FieldError fe : ex.getBindingResult().getFieldErrors()) {
-            sb.append(fe.getField()).append(" - ").append(fe.getDefaultMessage()).append("; ");
-        }
-        return buildResponse(HttpStatus.BAD_REQUEST, sb.toString(), req.getRequestURI());
-    }
-
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ApiErrorResponse> handleAll(Exception ex, HttpServletRequest req) {
         return buildResponse(HttpStatus.INTERNAL_SERVER_ERROR, "An unexpected error occurred", req.getRequestURI());

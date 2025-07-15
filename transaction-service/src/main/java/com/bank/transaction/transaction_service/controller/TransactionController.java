@@ -17,8 +17,14 @@ public class TransactionController {
 
     private final TransactionService transactionService;
 
+    @GetMapping("/test")
+    public ResponseEntity<String> testCard() {
 
-@PostMapping("/deposit")
+        return ResponseEntity.ok(" Transaction Microservice is working!");
+    }
+
+
+    @PostMapping("/deposit")
 public ResponseEntity<TransactionResponseDto> deposit(
         @Valid @RequestBody TransactionRequestDto dto,
         @RequestHeader("X-USER-ID") Long userId

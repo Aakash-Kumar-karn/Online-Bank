@@ -20,6 +20,11 @@ public class LoanController {
 
     private final LoanService loanService;
 
+    @GetMapping("/test")
+    public ResponseEntity<String> testCard() {
+
+        return ResponseEntity.ok(" Loan Microservice is working!");
+    }
     @GetMapping("/types")
     public ResponseEntity<List<String>> getLoanType(){
         List<String> list = loanService.getAllLoanTypes();

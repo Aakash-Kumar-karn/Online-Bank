@@ -7,8 +7,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="eureka-server" />
+        <module name="gateway-service" />
       </profile>
-      <profile name="Annotation profile for loan-service" enabled="true">
+      <profile name="Annotation profile for CardMicroservice" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -16,6 +18,7 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.32/lombok-1.18.32.jar" />
         </processorPath>
         <module name="transaction-service" />
+        <module name="insurance-service" />
         <module name="user-service" />
         <module name="CardService" />
         <module name="notification-service" />
@@ -29,6 +32,9 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="CardService" options="-parameters" />
+      <module name="eureka-server" options="-parameters" />
+      <module name="gateway-service" options="-parameters" />
+      <module name="insurance-service" options="-parameters" />
       <module name="loan-service" options="-parameters" />
       <module name="notification-service" options="-parameters" />
       <module name="transaction-service" options="-parameters" />

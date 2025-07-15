@@ -152,5 +152,3 @@ public class LoanServiceImpl implements LoanService {
 
 
 }
-//If userId = 1 and exists → loan is applied
-//If userId = 999 and doesn't exist →  "User does not exist!" (500 or custom 400)

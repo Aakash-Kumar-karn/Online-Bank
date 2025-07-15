@@ -23,7 +23,10 @@ import java.util.List;
 public class CardController {
 
     private final CardService cardService;
-
+    @GetMapping("/test")
+    public ResponseEntity<String> testCard() {
+        return ResponseEntity.ok(" Card Microservice is working!");
+    }
     @PreAuthorize("hasRole('USER')")
     @PostMapping("/issue")
     public ResponseEntity<CardDto> issueCard(@Valid @RequestBody CardDto cardDto){
